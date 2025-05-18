@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Amor da Minha Vida ❤️</title>
+    <style>
+        /* CSS ROMÂNTICO */
+        body {
+            font-family: 'Arial', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #8b0000;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.1);
+        }
+
+        .love-letter {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .love-letter:before {
+            content: "❤️";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 1.5em;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            padding: 10px 20px 10px 40px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            position: relative;
+            text-align: left;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 10px;
+            background: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .heart-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .heart-btn:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+
+        .hidden-message {
+            display: none;
+            margin: 20px 0;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff6b6b;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .music-player {
+            margin: 20px 0;
+        }
+
+        .music-container {
+            margin: 30px auto;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .play-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .play-btn:hover {
+            background: #ff4757;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Para o Amor da Minha Vida ❤️</h1>
+        <p class="subtitle">"Se essa boca não beijasse tão bem, Se esse abraço não fosse tão massa..."</p>
+
+        <div class="music-container">
+            <h3>Nossa Música ❤️</h3>
+            <div id="youtube-player"></div>
+            <button class="play-btn" id="playMusic">
+                <span>▶️ Tocar "Nem de Graça"</span>
+            </button>
+        </div>
+
+        <div class="photo-gallery">
+            <!-- Adicione suas fotos aqui -->
+            <img src="images/casal-01.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-02.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-03.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-04.jpeg" class="photo" alt="Nossa foto">
+        </div>
+
+        <div class="love-letter">
+            <h2>Vida,</h2>
+            <p>
+                Desde aquela época na escola, quando nossos olhares se cruzaram pela primeira vez, eu sabia que havia
+                algo especial em você. Quatro anos se passaram, e cada dia ao seu lado só confirma o quanto sou sortudo
+                por te ter.
+            </p>
+            <p>
+                Lembra daquela vez que [lembre um momento especial]? Foi quando eu percebi que não queria passar mais um
+                dia sem você. Você é minha música favorita, meu porto seguro, meu amor eterno.
+            </p>
+            <p>
+                Feliz Dia dos Namorados, meu amor. Que possamos comemorar muitos outros juntos!
+            </p>
+            <p style="text-align: right;">Xi Amo</p>
+        </div>
+
+        <div class="timeline">
+            <h2>Nossa Linha do Tempo</h2>
+            <div class="timeline-item">
+                <h3>2019 - O Primeiro Encontro</h3>
+                <p>Nos conhecemos na escola, lembra? [Detalhe específico].</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2020 - O Primeiro Beijo</h3>
+                <p>Foi em [lugar] e foi mágico!</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2021 - Nossa Primeira Viagem</h3>
+                <p>Fomos para [destino] e foi incrível!</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2023 - O Dia que Eu Soube que Era Pra Sempre</h3>
+                <p>[Descreva um momento marcante].</p>
+            </div>
+        </div>
+
+        <button class="heart-btn" id="loveBtn">Clique Aqui ❤️</button>
+        <div class="hidden-message" id="hiddenMessage">
+            <h2>Você é a pessoa mais incrível do mundo!</h2>
+            <p>Eu te amo mais do que palavras podem expressar. ❤️</p>
+        </div>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+    <script>
+        // 1. Configuração global
+        var player;
+        var youtubeApiLoaded = false;
+
+        // 2. Carrega a API do YouTube
+        function loadYouTubeAPI() {
+            if (window.YT) {
+                youtubeApiLoaded = true;
+                return;
+            }
+
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            tag.onload = function () {
+                youtubeApiLoaded = true;
+                console.log("API do YouTube carregada com sucesso");
+            };
+            document.head.appendChild(tag);
+        }
+
+        // 3. Função chamada quando a API está pronta
+        function onYouTubeIframeAPIReady() {
+            try {
+                player = new YT.Player('youtube-player', {
+                    height: '0',
+                    width: '0',
+                    videoId: 'u9yPJYVYfK0',
+                    playerVars: {
+                        autoplay: 0,
+                        controls: 0,
+                        disablekb: 1,
+                        modestbranding: 1,
+                        origin: window.location.origin
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange,
+                        'onError': onPlayerError
+                    }
+                });
+            } catch (e) {
+                console.error("Erro ao criar player:", e);
+                setupFallback();
+            }
+        }
+
+        // 4. Quando o player estiver pronto
+        function onPlayerReady(event) {
+            console.log("Player do YouTube pronto");
+            document.getElementById('playMusic').addEventListener('click', function () {
+                try {
+                    event.target.playVideo();
+                    this.style.display = 'none';
+                    player.setSize(300, 80);
+                } catch (e) {
+                    console.error("Erro ao reproduzir:", e);
+                    setupFallback();
+                    this.style.display = 'none';
+                }
+            });
+        }
+
+        // 5. Fallback para quando a API falha
+        function setupFallback() {
+            console.log("Ativando fallback...");
+            document.getElementById('youtube-player').innerHTML = `
+            <iframe width="300" height="80" 
+                src="https://www.youtube.com/embed/u9yPJYVYfK0?enablejsapi=1&controls=0&modestbranding=1" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media">
+            </iframe>
+        `;
+        }
+
+        // 6. Monitora o estado do player
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                document.getElementById('playMusic').style.display = 'inline-flex';
+            }
+        }
+
+        // 7. Tratamento de erros
+        function onPlayerError(event) {
+            console.error("Erro no player:", event.data);
+            setupFallback();
+        }
+
+        // 8. Efeitos Visuais
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    heartsContainer.appendChild(heart);
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 100);
+            }
+        }
+
+        // 9. Inicialização
+        window.addEventListener('DOMContentLoaded', function () {
+            loadYouTubeAPI();
+
+            // Configura timeout para fallback
+            setTimeout(function () {
+                if (!youtubeApiLoaded) {
+                    console.log("API do YouTube não carregada - ativando fallback");
+                    setupFallback();
+                }
+            }, 5000);
+
+            document.getElementById('loveBtn').addEventListener('click', function () {
+                document.getElementById('hiddenMessage').style.display = 'block';
+                createHearts();
+                new Audio('https://www.soundjay.com/love/sounds/heartbeat-01.mp3').play()
+                    .catch(e => console.log("Áudio bloqueado"));
+            });
+
+            // Efeito de digitação
+            const loveLetterText = document.querySelector('.love-letter p');
+            if (loveLetterText) {
+                const originalText = loveLetterText.innerText;
+                loveLetterText.innerText = '';
+                let i = 0;
+                const typing = setInterval(() => {
+                    if (i < originalText.length) {
+                        loveLetterText.innerHTML += originalText.charAt(i);
+                        i++;
+                    } else clearInterval(typing);
+                }, 30);
+            }
+        });
+    </script>
+</body>
+
+</html>
