@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Amor da Minha Vida ❤️</title>
+    <style>
+        /* CSS ROMÂNTICO */
+        body {
+            font-family: 'Arial', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #8b0000;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.1);
+        }
+
+        .love-letter {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .love-letter:before {
+            content: "❤️";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 1.5em;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            padding: 10px 20px 10px 40px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            position: relative;
+            text-align: left;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 10px;
+            background: #ff6b6b;
+            border-radius: 50%;
+        }
+
+        .heart-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .heart-btn:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+
+        .hidden-message {
+            display: none;
+            margin: 20px 0;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff6b6b;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .music-player {
+            margin: 20px 0;
+        }
+
+        .music-container {
+            margin: 30px auto;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .play-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .play-btn:hover {
+            background: #ff4757;
+        }
+
+        /* Estilo adicional para o player de música */
+        #youtube-player-container {
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Para o Amor da Minha Vida ❤️</h1>
+        <p class="subtitle">"Se essa boca não beijasse tão bem, Se esse abraço não fosse tão massa..."</p>
+
+        <div class="music-container">
+            <h3>Nossa Música ❤️</h3>
+            <div id="youtube-player"></div>
+            <div id="youtube-player-container"></div>
+            <button class="play-btn" id="playMusic">
+                <span>▶️ Tocar</span>
+            </button>
+        </div>
+
+        <div class="photo-gallery">
+            <!-- Adicione suas fotos aqui -->
+            <img src="images/casal-01.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-04.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-03.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-02.jpeg" class="photo" alt="Nossa foto">
+        </div>
+
+        <div class="love-letter">
+            <h2>Vida,</h2>
+            <p>
+                Acredito que nada melhor do que começar ouvindo essa música. De onde tudo começou. Momentos antes do
+                primeiro beijo e que nos marcou muito!
+            </p>
+            <p>
+                Fiz essa lembrancinha aqui e espero que goste. Uma pequena mistura da minha área e a desmonstração
+                do amor que tenho por você.
+            </p>
+            <p>
+                Feliz Dia dos Namorados, meu amor. Que possamos comemorar muitos outros juntos! (Espero que eternos)
+            </p>
+            <p style="text-align: right;">Xi Amo</p>
+        </div>
+
+        <div class="timeline">
+            <h2>Linha do Tempo</h2>
+            <div class="timeline-item">
+                <h3>2019 - Primeiro Beijo</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2020 - Pandemia e Contato Dificultado</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2021 - Começo da Nossa História</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2022 - Primeira Viagem Juntos</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2023 - Meio Médica</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 - Primeira Viagem Para Disney</h3>
+            </div>
+        </div>
+
+        <button class="heart-btn" id="loveBtn">Clique Aqui ❤️</button>
+        <div class="hidden-message" id="hiddenMessage">
+            <h2>Você é o grande amor da minha vida!</h2>
+        </div>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+
+    <!-- Script modificado para melhor compatibilidade -->
+    <script>
+        // Sistema de música simplificado para máxima compatibilidade
+        document.addEventListener('DOMContentLoaded', function () {
+            // Referências aos elementos
+            const playBtn = document.getElementById('playMusic');
+            const playerContainer = document.getElementById('youtube-player-container');
+            let youtubeLoaded = false;
+            let playerCreated = false;
+
+            // Função para carregar diretamente o iframe de fallback
+            function loadDirectPlayer() {
+                if (playerCreated) return;
+                playerCreated = true;
+
+                playerContainer.style.display = 'block';
+                playerContainer.innerHTML = `
+                    <iframe width="280" height="158" 
+                        src="https://www.youtube.com/embed/QxamVP2dJCA?autoplay=1" 
+                        title="Nossa Música"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+
+                // Ocultar o botão quando o vídeo é carregado
+                playBtn.style.display = 'none';
+            }
+
+            // Quando clicar no botão de play
+            playBtn.addEventListener('click', function () {
+                loadDirectPlayer();
+            });
+
+            // Efeito de corações
+            document.getElementById('loveBtn').addEventListener('click', function () {
+                document.getElementById('hiddenMessage').style.display = 'block';
+                createHearts();
+
+                // Tentar tocar um efeito sonoro (opcional)
+                try {
+                    new Audio('https://www.soundjay.com/love/sounds/heartbeat-01.mp3').play();
+                } catch (e) {
+                    console.log("Áudio bloqueado pelo navegador");
+                }
+            });
+
+            // Cria o efeito de digitação na carta
+            animateTyping();
+        });
+
+        // Função para criar corações animados
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    heartsContainer.appendChild(heart);
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 100);
+            }
+        }
+
+        // Função para animar a digitação na carta
+        function animateTyping() {
+            const loveLetterParagraphs = document.querySelectorAll('.love-letter p');
+
+            loveLetterParagraphs.forEach((paragraph, index) => {
+                const originalText = paragraph.innerText;
+                paragraph.innerText = '';
+
+                setTimeout(() => {
+                    let i = 0;
+                    const typing = setInterval(() => {
+                        if (i < originalText.length) {
+                            paragraph.innerHTML += originalText.charAt(i);
+                            i++;
+                        } else {
+                            clearInterval(typing);
+                        }
+                    }, 30);
+                }, index * 1000); // Atrasar o início da animação para cada parágrafo
+            });
+        }
+    </script>
+</body>
+
+</html>
