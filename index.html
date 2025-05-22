@@ -209,59 +209,59 @@
             <div id="youtube-player"></div>
             <div id="youtube-player-container"></div>
             <button class="play-btn" id="playMusic">
-                <span>▶️ Tocar "Nem de Graça"</span>
+                <span>▶️ Tocar</span>
             </button>
         </div>
 
         <div class="photo-gallery">
             <!-- Adicione suas fotos aqui -->
             <img src="images/casal-01.jpeg" class="photo" alt="Nossa foto">
-            <img src="images/casal-02.jpeg" class="photo" alt="Nossa foto">
-            <img src="images/casal-03.jpeg" class="photo" alt="Nossa foto">
             <img src="images/casal-04.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-03.jpeg" class="photo" alt="Nossa foto">
+            <img src="images/casal-02.jpeg" class="photo" alt="Nossa foto">
         </div>
 
         <div class="love-letter">
             <h2>Vida,</h2>
             <p>
-                Desde aquela época na escola, quando nossos olhares se cruzaram pela primeira vez, eu sabia que havia
-                algo especial em você. Quatro anos se passaram, e cada dia ao seu lado só confirma o quanto sou sortudo
-                por te ter.
+                Acredito que nada melhor do que começar ouvindo essa música. De onde tudo começou. Momentos antes do
+                primeiro beijo e que nos marcou muito!
             </p>
             <p>
-                Lembra daquela vez que [lembre um momento especial]? Foi quando eu percebi que não queria passar mais um
-                dia sem você. Você é minha música favorita, meu porto seguro, meu amor eterno.
+                Fiz essa lembrancinha aqui e espero que goste. Uma pequena mistura da minha área e a desmonstração
+                do amor que tenho por você.
             </p>
             <p>
-                Feliz Dia dos Namorados, meu amor. Que possamos comemorar muitos outros juntos!
+                Feliz Dia dos Namorados, meu amor. Que possamos comemorar muitos outros juntos! (Espero que eternos)
             </p>
             <p style="text-align: right;">Xi Amo</p>
         </div>
 
         <div class="timeline">
-            <h2>Nossa Linha do Tempo</h2>
+            <h2>Linha do Tempo</h2>
             <div class="timeline-item">
-                <h3>2019 - O Primeiro Encontro</h3>
-                <p>Nos conhecemos na escola, lembra? [Detalhe específico].</p>
+                <h3>2019 - Primeiro Beijo</h3>
             </div>
             <div class="timeline-item">
-                <h3>2020 - O Primeiro Beijo</h3>
-                <p>Foi em [lugar] e foi mágico!</p>
+                <h3>2020 - Pandemia e Contato Dificultado</h3>
             </div>
             <div class="timeline-item">
-                <h3>2021 - Nossa Primeira Viagem</h3>
-                <p>Fomos para [destino] e foi incrível!</p>
+                <h3>2021 - Começo da Nossa História</h3>
             </div>
             <div class="timeline-item">
-                <h3>2023 - O Dia que Eu Soube que Era Pra Sempre</h3>
-                <p>[Descreva um momento marcante].</p>
+                <h3>2022 - Primeira Viagem Juntos</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2023 - Meio Médica</h3>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 - Primeira Viagem Para Disney</h3>
             </div>
         </div>
 
         <button class="heart-btn" id="loveBtn">Clique Aqui ❤️</button>
         <div class="hidden-message" id="hiddenMessage">
-            <h2>Você é a pessoa mais incrível do mundo!</h2>
-            <p>Eu te amo mais do que palavras podem expressar. ❤️</p>
+            <h2>Você é o grande amor da minha vida!</h2>
         </div>
     </div>
 
@@ -270,7 +270,7 @@
     <!-- Script modificado para melhor compatibilidade -->
     <script>
         // Sistema de música simplificado para máxima compatibilidade
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Referências aos elementos
             const playBtn = document.getElementById('playMusic');
             const playerContainer = document.getElementById('youtube-player-container');
@@ -281,7 +281,7 @@
             function loadDirectPlayer() {
                 if (playerCreated) return;
                 playerCreated = true;
-                
+
                 playerContainer.style.display = 'block';
                 playerContainer.innerHTML = `
                     <iframe width="280" height="158" 
@@ -292,21 +292,21 @@
                         allowfullscreen>
                     </iframe>
                 `;
-                
+
                 // Ocultar o botão quando o vídeo é carregado
                 playBtn.style.display = 'none';
             }
-            
+
             // Quando clicar no botão de play
-            playBtn.addEventListener('click', function() {
+            playBtn.addEventListener('click', function () {
                 loadDirectPlayer();
             });
 
             // Efeito de corações
-            document.getElementById('loveBtn').addEventListener('click', function() {
+            document.getElementById('loveBtn').addEventListener('click', function () {
                 document.getElementById('hiddenMessage').style.display = 'block';
                 createHearts();
-                
+
                 // Tentar tocar um efeito sonoro (opcional)
                 try {
                     new Audio('https://www.soundjay.com/love/sounds/heartbeat-01.mp3').play();
@@ -334,15 +334,15 @@
                 }, i * 100);
             }
         }
-        
+
         // Função para animar a digitação na carta
         function animateTyping() {
             const loveLetterParagraphs = document.querySelectorAll('.love-letter p');
-            
+
             loveLetterParagraphs.forEach((paragraph, index) => {
                 const originalText = paragraph.innerText;
                 paragraph.innerText = '';
-                
+
                 setTimeout(() => {
                     let i = 0;
                     const typing = setInterval(() => {
